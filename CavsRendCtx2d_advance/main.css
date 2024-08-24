@@ -1,0 +1,14 @@
+/*
+canvas {
+    cursor: crosshair;
+    height: 100vh;
+    border: 1px solid #000000;
+
+}
+*/
+
+body {
+    height: 100vh;
+    border: 1px solid black;
+    cursor: url('sqCursor.png'), default;
+}
