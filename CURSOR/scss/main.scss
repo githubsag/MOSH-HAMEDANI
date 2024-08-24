@@ -1,0 +1,13 @@
+@import "_var";
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    height: 600vh;
+    cursor: cell;
+}
+
+@import "_header";
