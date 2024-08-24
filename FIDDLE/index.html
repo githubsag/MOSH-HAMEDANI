@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./main.css">
+</head>
+<body>
+    <div class="box" id="box"></div>
+
+    <script>
+        var element = document.getElementById('box');
+
+        var drawLines = function(event) {
+            var x = event.pageX;
+            var y = event.pageY;
+
+            var straightLine = element.querySelector('.straightLine');
+            var hrLine = element.querySelector('.hrLine');
+
+            var slTrans = 'translate(' + x + 'px, 0px)';
+            var hrTrans = 'translate(0px, ' + y + 'px)';
+            if(!straightLine){
+                straightLine = document.createElement('div');
+                straightLine.classList.add('straightLine');
+                straightLine.style.height = "100%";
+                straightLine.style.width = '2px';
+                element.appendChild(straightLine);
+            }
+            straightLine.style.transform = slTrans;
+
+            if(!hrLine) {
+                hrLine = document.createElement('div');
+                hrLine.style.height = "2px";
+                hrLine.classList.add('hrLine');
+                hrLine.style.width = '100%';
+                element.appendChild(hrLine);
+            }
+            hrLine.style.transform = hrTrans;
+        }
+
+        element.addEventListener('mousemove', function(event) {
+            drawLines(event);
+        });
+
+        element.addEventListener('mousedown', function(event) {
+            drawLines(event);
+        });
+
+        element.addEventListener('mouseup', function(event) {
+            drawLines(event);
+        });
+
+        element.addEventListener('mouseout', function(event){
+            drawLines(event);
+        });
+    </script>
+</body>
+</html>
